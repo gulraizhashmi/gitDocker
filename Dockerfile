@@ -4,12 +4,12 @@ RUN mkdir -p /app
 WORKDIR /app
 
 COPY pom.xml                          .
-COPY run.sh .
+COPY run.sh                           .
 COPY src                              ./src
 COPY testNG.xml                                             .
 
-WORKDIR /app/
+
 
 ENV HUB_HOST=selenium-hub
 ENTRYPOINT ["/bin/sh"]
-CMD ["run.sh"]
+RUN mvn clean test
