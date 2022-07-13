@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [Regression]" guice-stage="DEVELOPMENT" verbose="0">
+  <test parallel="classes" name="Real Device(failed)">
+    <parameter name="runAs" value="grid"/>
+    <parameter name="runOn" value="0726325192007644"/>
+    <parameter name="platform" value="mobile"/>
+    <classes>
+      <class name="testscripts.second">
+        <methods>
+          <include name="testtwo"/>
+        </methods>
+      </class> <!-- testscripts.second -->
+      <class name="testscripts.setupGrid">
+        <methods>
+          <include name="startDockerGrid"/>
+          <include name="endDockerGrid"/>
+        </methods>
+      </class> <!-- testscripts.setupGrid -->
+      <class name="testscripts.firstTest">
+        <methods>
+          <include name="testOne"/>
+        </methods>
+      </class> <!-- testscripts.firstTest -->
+      <class name="testscripts.third">
+        <methods>
+          <include name="testthree"/>
+        </methods>
+      </class> <!-- testscripts.third -->
+    </classes>
+  </test> <!-- Real Device(failed) -->
+</suite> <!-- Failed suite [Regression] -->
